@@ -1,0 +1,148 @@
+# =====================================================================
+#  SnakeGame - the classic Snake game, played inside a chest menu.
+#  Players open it with /game (alias /snake).
+#  All text shown to players lives in messages.yml.
+# =====================================================================
+
+game:
+  # Length of the snake when a round starts, head included.
+  start-length: 3
+  # How many segments the snake grows for every apple it eats.
+  growth-per-apple: 1
+  # true  = running into the edge of the board ends the game (classic).
+  # false = the snake comes out on the other side instead.
+  walls: true
+  # Speed and theme new players start with (keys from "speeds" and "themes").
+  default-speed: normal
+  default-theme: grass
+
+# Speeds players can choose between in the menu. Each speed keeps its own high score.
+speeds:
+  slow:
+    name: "&aSlow"
+    moves-per-second: 2.5
+  normal:
+    name: "&eNormal"
+    moves-per-second: 3.5
+  fast:
+    name: "&cFast"
+    moves-per-second: 5.0
+
+# The snake speeds up a little with every apple, up to a limit.
+speed-up:
+  per-apple: 0.05
+  max-moves-per-second: 8.0
+
+menu:
+  # true  = Big board: the snake gets the whole 9x6 chest, and the controls
+  #         (arrow pad, score, settings) are placed in the player's own
+  #         inventory while they play. Their items are stored safely, on disk
+  #         too, and given back the moment the menu closes (also after a crash).
+  # false = Compact board: 9x5 board with one row of controls at the bottom.
+  #         The player's inventory is never touched.
+  use-player-inventory: true
+  # Closing the menu pauses the game instead of ending it.
+  # Typing /game again continues where the player left off.
+  pause-on-close: true
+  # How long a paused game is kept before it ends on its own.
+  paused-game-timeout-minutes: 10
+
+# Board themes, picked by each player in the menu.
+# light/dark are stained glass pane colours (0-15) used for the checkered board:
+#  0 white, 1 orange, 2 magenta, 3 light blue, 4 yellow, 5 lime, 6 pink, 7 gray,
+#  8 light gray, 9 cyan, 10 purple, 11 blue, 12 brown, 13 green, 14 red, 15 black
+themes:
+  grass:
+    name: "&aGrass"
+    icon: GRASS
+    light: 5
+    dark: 13
+  night:
+    name: "&8Night"
+    icon: COAL_BLOCK
+    light: 7
+    dark: 15
+  desert:
+    name: "&eDesert"
+    icon: SAND
+    light: 0
+    dark: 4
+  ocean:
+    name: "&bOcean"
+    icon: PRISMARINE
+    light: 3
+    dark: 9
+  snow:
+    name: "&fSnow"
+    icon: SNOW_BLOCK
+    light: 0
+    dark: 8
+
+# Items used in the game.
+#  hdb:      HeadDatabase heads to use, tried from top to bottom. Each entry can be
+#            a head NAME (as shown in /hdb, case and brackets don't matter, so
+#            "Snake Head" also finds "Snake (head)") or a head ID such as "8352".
+#  material: used when HeadDatabase is not installed or none of the heads were found.
+items:
+  snake-head:
+    hdb:
+      - "Snake Head"
+      - "8352"
+    material: SKULL_ITEM
+    data: 4
+  snake-body:
+    hdb:
+      - "Green Block"
+      - "1220"
+    material: WOOL
+    data: 5
+  apple:
+    hdb: []
+    material: APPLE
+  arrow-up:
+    hdb:
+      - "Lime Arrow Up"
+      - "Green Arrow Up"
+      - "Oak Wood Arrow Up"
+    material: ARROW
+  arrow-down:
+    hdb:
+      - "Lime Arrow Down"
+      - "Green Arrow Down"
+      - "Oak Wood Arrow Down"
+    material: ARROW
+  arrow-left:
+    hdb:
+      - "Lime Arrow Left"
+      - "Green Arrow Left"
+      - "Oak Wood Arrow Left"
+    material: ARROW
+  arrow-right:
+    hdb:
+      - "Lime Arrow Right"
+      - "Green Arrow Right"
+      - "Oak Wood Arrow Right"
+    material: ARROW
+
+# Sounds use 1.8 sound names: "NAME volume pitch". Leave a sound empty ("") to turn it off.
+# Players can also mute the game themselves in the menu.
+sounds:
+  start: "NOTE_PLING 1.0 1.2"
+  turn: "WOOD_CLICK 0.3 1.8"
+  eat: "ORB_PICKUP 0.8 1.0"
+  # Each apple makes the eat sound a little higher, up to this many apples.
+  eat-pitch-steps: 20
+  die: "NOTE_BASS 1.0 0.5"
+  game-over: "NOTE_PIANO 1.0 0.6"
+  new-best: "LEVEL_UP 1.0 1.0"
+  win: "FIREWORK_TWINKLE 1.0 1.0"
+  pause: "NOTE_PIANO 0.7 0.8"
+  resume: "NOTE_PIANO 0.7 1.2"
+  click: "CLICK 0.5 1.5"
+  deny: "NOTE_BASS 0.7 0.8"
+
+leaderboard:
+  # Announce to the whole server when someone beats the server record for a speed.
+  broadcast-server-record: true
+  # How many players /game top and the trophy in the menu show.
+  size: 10

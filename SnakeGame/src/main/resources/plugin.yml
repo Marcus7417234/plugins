@@ -1,0 +1,20 @@
+name: SnakeGame
+version: ${project.version}
+main: io.github.marcus7417234.snakegame.SnakeGamePlugin
+description: The classic Snake game, played inside a chest menu.
+authors: [marcus7417234]
+softdepend: [HeadDatabase]
+
+commands:
+  game:
+    description: Play Snake!
+    usage: /<command> [top|stats|help]
+    aliases: [snake]
+
+permissions:
+  snakegame.play:
+    description: Play Snake and see the leaderboards.
+    default: true
+  snakegame.admin:
+    description: Reload the SnakeGame configuration.
+    default: op

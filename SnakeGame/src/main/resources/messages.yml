@@ -1,0 +1,135 @@
+# =====================================================================
+#  SnakeGame messages. Use & for colour codes.
+#  Words in {curly brackets} are filled in by the plugin.
+# =====================================================================
+
+prefix: "&8[&a&lSnake&8] &7"
+
+chat:
+  players-only: "&cOnly players can play Snake."
+  no-permission: "&cYou don't have permission to do that."
+  cannot-play-now: "&cYou can't play Snake right now."
+  unknown-command: "&cUnknown command. Try &f/{label} help&c."
+  reloaded: "&aSnakeGame has been reloaded."
+  game-paused: "&7Your game is paused. Type &a/{label} &7to continue."
+  game-expired: "&7Your paused game ran out of time. You scored &c{score}&7."
+  game-over: "&7Game over! You ate &c{score} &7{apples} in &f{time}&7. &8(Best: &e{best}&8)"
+  new-best: "&6&lNew personal best! &eYou ate &c{score} &e{apples} on &f{speed}&e."
+  server-record: "&6&l{player} &eset a new server record: &c{score} &e{apples} on &f{speed}&e!"
+  win: "&6&lYou filled the whole board! &eWhat a snake!"
+  apple-singular: "apple"
+  apple-plural: "apples"
+  unknown-speed: "&cUnknown speed. Choose one of: &f{speeds}"
+  unknown-player: "&cNo Snake stats found for &f{player}&c."
+  top-header: "&8&m------&r &a&lSnake Top {size} &8- {speed} &8&m------"
+  top-line: "&7#{rank} &f{player} &8- &c{score} &7{apples}"
+  top-empty: "&7Nobody has played on {speed} &7yet. Be the first with &a/{label}&7!"
+  stats-header: "&8&m------&r &a&lSnake stats of {player} &8&m------"
+  stats-lines:
+    - "&7Games played: &f{games}"
+    - "&7Apples eaten: &f{apples}"
+    - "&7Time played: &f{time}"
+  stats-best: "&7Best on {speed}&7: &e{score}"
+  help:
+    - "&8&m-------&r &a&lSnake &8&m-------"
+    - "&a/{label} &7- Play Snake"
+    - "&a/{label} top [speed] &7- Best players"
+    - "&a/{label} stats [player] &7- Statistics"
+  help-admin:
+    - "&a/{label} reload &7- Reload the config"
+
+gui:
+  title: "&2&lSnake"
+  # Board
+  snake-head: "&a&lSnake"
+  snake-head-lore:
+    - "&7Length: &f{length}"
+  snake-body: "&2Snake"
+  apple: "&c&lApple"
+  apple-lore:
+    - "&7Eat it to grow!"
+  # Arrow buttons ({key} is the number key that also works while hovering the board)
+  up: "&a&l\u2191 Up"
+  down: "&a&l\u2193 Down"
+  left: "&a&l\u2190 Left"
+  right: "&a&l\u2192 Right"
+  arrow-lore:
+    - "&7Or hover the board and press &f{key}"
+  # The big button in the middle of the arrows
+  start: "&a&l\u25b6 Start"
+  start-lore:
+    - "&7Or simply press an arrow!"
+  pause: "&e&l|| Pause"
+  resume: "&a&l\u25b6 Resume"
+  play-again: "&a&l\u21bb Play again"
+  wait: "&7..."
+  key-lore: "&8Key: {key}"
+  # Score and best
+  score: "&c&lApples: &f{score}"
+  score-lore:
+    - "&7Length: &f{length}"
+    - "&7Speed: {speed} &8({moves} moves/s)"
+  best: "&6&lBest: &f{best}"
+  best-lore:
+    - "&7Your best on {speed}"
+    - ""
+    - "&eTop players:"
+  best-line: "&7{rank}. &f{player} &8- &c{score}"
+  best-empty: "&7No scores yet - be the first!"
+  # Settings
+  speed: "&b&lSpeed: {speed}"
+  speed-line-selected: "&a\u25b6 {speed}"
+  speed-line: "&8  {speed}"
+  speed-change: "&eClick to change"
+  speed-locked: "&cFinish this round to change"
+  theme: "&d&lTheme: {theme}"
+  theme-line-selected: "&a\u25b6 {theme}"
+  theme-line: "&8  {theme}"
+  theme-change: "&eClick to change"
+  sound-on: "&a&l\u266b Sound: On"
+  sound-off: "&7&l\u266b Sound: Off"
+  sound-lore:
+    - "&eClick to toggle"
+  quit: "&c&l\u2716 Quit"
+  quit-lore:
+    - "&7Close the game."
+  quit-lore-paused:
+    - "&7Close the game. It will be paused,"
+    - "&7type &a/{label} &7to continue."
+  stats: "&a&l{player}'s stats"
+  stats-lore:
+    - "&7Games played: &f{games}"
+    - "&7Apples eaten: &f{apples}"
+    - "&7Time played: &f{time}"
+    - ""
+    - "&eBest scores:"
+  stats-best-line: "&8 \u2022 {speed}&8: &f{score}"
+  help: "&e&lHow to play"
+  help-lore:
+    - "&7Eat the &capples &7to grow longer."
+    - "&7Don't hit the walls or yourself!"
+    - ""
+    - "&eControls:"
+    - "&8\u2022 &7Click the arrows"
+    - "&8\u2022 &7Click a square on the board to"
+    - "&7  turn towards it"
+    - "&8\u2022 &7Hover the board and press"
+    - "&f  1 &7\u2190  &f2 &7\u2191  &f3 &7\u2193  &f4 &7\u2192"
+    - ""
+    - "&7Your items are given back when"
+    - "&7you close the game."
+  # Game over screen
+  game-over: "&c&lGame Over"
+  win: "&6&lYou win!"
+  result-lore:
+    - "&7Apples: &c{score}"
+    - "&7Length: &f{length}"
+    - "&7Time: &f{time}"
+    - "&7Speed: {speed}"
+  result-score: "&c&l{score} {apples}"
+  result-best: "&6&lBest: &f{best}"
+  result-new-best: "&6&l\u2605 New best! \u2605"
+  result-new-best-lore:
+    - "&7Previous best: &f{previous}"
+  result-time: "&e&lTime: &f{time}"
+  paused-info: "&e&lPaused"
